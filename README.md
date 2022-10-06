@@ -1,3 +1,6 @@
+Cloud front link: https://dc4nabuctzdtz.cloudfront.net
+S3 bucket link: http://car-store-bucket3.s3-website-us-east-1.amazonaws.com/
+
 # React-shop-cloudfront
 
 This is frontend starter project for nodejs-aws mentoring program. It uses the following technologies:
