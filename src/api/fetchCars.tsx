@@ -1,8 +1,8 @@
 import { apiFetch } from './apiFetch/apiFetch';
 
-export const getOptionsHeader = (siteCode: string) => {
+export const fetchCars = () => {
   return apiFetch({
     method: 'GET',
-    url: `/api/repo-service/${siteCode}/settings/get/header`,
+    url: `https://o11h5923hh.execute-api.us-east-1.amazonaws.com/dev/cars`,
   });
 };
