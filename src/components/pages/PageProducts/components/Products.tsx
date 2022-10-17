@@ -7,12 +7,13 @@ import { ICar } from '~/models/Car';
 import { fetchCars } from '~/api/fetchCars';
 
 export default function Products() {
-  const [isLoading, setIsLoading] = useState<boolean>(true);
+  const [isLoading, setIsLoading] = useState<boolean>(false);
 
   const [data, setData] = useState<ICar[]>([]);
 
   const getCars = useCallback(async () => {
     try {
+      setIsLoading(true);
       const response = await fetchCars();
       setIsLoading(false);
       if (response.status === 200) {
@@ -23,7 +24,7 @@ export default function Products() {
     } finally {
       setIsLoading(false);
     }
-  }, [setIsLoading]);
+  }, [setIsLoading, setData]);
 
   useEffect(() => {
     getCars();
@@ -43,11 +44,11 @@ export default function Products() {
           >
             <CardMedia
               sx={{ pt: '56.25%' }}
-              image={`${car.image}?sig=${index}`}
+              image={`https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRpD1VUe5y8s9YJB9ZMhfpoHXfpFLT4_CYuig&usqp=CAU`}
             />
 
             <span style={{ padding: '10px' }}>
-              {car.brand} - {car.model}
+              {car.title} - Price: {car.price} - Count {car.count}
             </span>
 
             {/* <CardActions>
