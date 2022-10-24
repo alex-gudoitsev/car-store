@@ -51,9 +51,7 @@ export default function Products() {
               {car.title} - Price: {car.price} - Count {car.count}
             </span>
 
-            {/* <CardActions>
-              <AddProductToCart product={product} />
-            </CardActions> */}
+            {/* <AddProductToCart product={car} /> */}
           </Card>
         </Grid>
       ))}
