@@ -12,24 +12,7 @@ import { useCallback, useEffect, useState } from 'react';
 import { ICar } from '~/models/Car';
 import { fetchCars } from '~/api/fetchCars';
 
-export default function ProductsTable() {
-  const [data, setData] = useState<ICar[]>([]);
-  const getCars = useCallback(async () => {
-    try {
-      const response = await fetchCars();
-
-      if (response.status === 200) {
-        setData(response.data.cars);
-      }
-    } catch (error) {
-      console.log(error);
-    }
-  }, [setData]);
-
-  useEffect(() => {
-    getCars();
-  }, []);
-
+export default function ProductsTable({ data }: { data: ICar[] }) {
   return (
     <TableContainer component={Paper}>
       <Table aria-label="simple table">

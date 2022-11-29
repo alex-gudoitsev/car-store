@@ -6,9 +6,14 @@ import axios from 'axios';
 type CSVFileImportProps = {
   url: string;
   title: string;
+  onSuccessUpload: () => void;
 };
 
-export default function CSVFileImport({ url, title }: CSVFileImportProps) {
+export default function CSVFileImport({
+  url,
+  title,
+  onSuccessUpload,
+}: CSVFileImportProps) {
   const [file, setFile] = React.useState<File>();
 
   const onFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -42,6 +47,7 @@ export default function CSVFileImport({ url, title }: CSVFileImportProps) {
     });
     console.log('Result: ', result);
     setFile(undefined);
+    onSuccessUpload();
   };
   return (
     <Box>

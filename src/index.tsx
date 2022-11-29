@@ -7,7 +7,7 @@ import { BrowserRouter } from 'react-router-dom';
 import { QueryClient, QueryClientProvider } from 'react-query';
 import { ReactQueryDevtools } from 'react-query/devtools';
 import { theme } from '~/theme';
-//import { worker } from './mocks/browser';
+import { worker } from './mocks/browser';
 
 const queryClient = new QueryClient({
   defaultOptions: {
